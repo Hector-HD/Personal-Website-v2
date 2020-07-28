@@ -25,7 +25,8 @@ a img {
 
 
 #menu-top{
-	height: 50px;
+  height: 50px;
+  font-size: 18px;
 }
 
 .inner {
@@ -401,6 +402,9 @@ img.icon:hover {
         padding-right: 10px;
   }
 
+  #menu-top {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { 
@@ -426,6 +430,7 @@ img.icon:hover {
   }
   #menu-top {
     padding-bottom: 0px;
+    font-size: 12px;
   }
 
 
@@ -465,6 +470,10 @@ img.icon:hover {
     display: inline-block;
     width: 55%;
         padding-right: 10px;
+  }
+
+  #menu-top {
+    font-size: 12px;
   }
 
   #about .inner {
