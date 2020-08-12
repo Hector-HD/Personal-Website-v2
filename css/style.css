@@ -283,7 +283,7 @@ img.icon:hover {
 }
 
 #footer{
-  background: #a9a9a9;
+  background: black;
   min-height: 50px;
   text-align: left;
   color: #b1b1b1;
@@ -294,7 +294,7 @@ img.icon:hover {
 
 #footer i{
 	text-align: center;
-	color:black;
+	color:white;
 	font-size: 25px;
 }
 
