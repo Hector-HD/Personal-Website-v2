@@ -99,10 +99,11 @@ a img {
 }
 
 #about {
-  background-color: #ff3b3f;
+  background-color: rgb(185,222,237);
   height: 820px;
   margin-top:-30px;
 }
+
 
 #code {
   border-radius: 5px;
@@ -234,7 +235,7 @@ img.icon:hover {
 
 
 #project-section{
-  background: #caebf2;
+  background: white;
   height: auto;
   margin-top: -30px;
   text-align: center;
@@ -252,6 +253,7 @@ img.icon:hover {
   margin: 20px;
   background-color: white;
   display: inline-block;
+  border: 1px solid black;
 }
 
 
