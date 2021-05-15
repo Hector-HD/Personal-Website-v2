@@ -342,6 +342,15 @@ img.icon:hover {
     border-radius: 10px 10px 0 0;
 }
 
+
+  .image_in_grid {
+    width: 400px;
+    height: 300px;
+    }
+  .image_in_grid img {
+    width: 100%;
+  }
+
 @media screen and (max-width:860px) {
     .project-card {
         width: 90%;

@@ -24,7 +24,7 @@
 
     <div id="project-section">
         <div class="inner">
-            <a class="img"><img src="../../img/Feathir.png" height="360"></a>
+            <a class="img"><img src="../../img/dhi-alexa.jpg" height="360"></a>
 
 
         </div>
@@ -32,30 +32,29 @@
 
     <div id="resume">
         <div class="inner">
-            <p class="sectionName">Feathir Property Management</p>
+            <p class="sectionName">Display House Images - Alexa Skill</p>
             <p class="section-sectionName" style="text-align:left;">Summary</p>
-            <p><b>Feathir Property Management </b>
-                <span class="right"><i>January 2019 - Decmber 2019</i></span><br/><b>ASU Captone Project</b>
+            <p><b>Display House Images - Alexa Skill </b>
+                <span class="right"><i>2018</i></span><br/>
                 <span class="right"><i>Tempe, AZ</i></span><br/><br/>
                 <ul style="list-style:circle;">
-                    <p style="text-indent:25px">The Feathir Property Management application is a tool that was created to help property owners manage their properties. The application is divided into two parts. There is a web application where users can view and manage their properties.
-                        There is also a mobile application where property managers can create inspections and send inspections to the vendors. This application is filling in a gap in the real estate market to help manage and maintain inspection records.
-                    </p>
-
-                    <p style="text-indent:25px">Whenever a tenant moves in or out, the property manager has to go through a list of items and verify the items in the property. If any of the items are damaged or need work they write it down on a piece of paper, take a picture, and
-                        then email a vendor to come to the property and fix it. Then the property manager has to scan the inspection list and archive the inspection in a local computer. They also have to keep track of which property the inspection paperwork
-                        took place at. The Feathir app was created to help make this process easier and more efficient. </p>
-                    <p style="text-indent:25px"> By using the Feathir app, the property manager is able to keep track of what properties he manages. If they have to do an inspection for a new or old tenant, all they need to take is their phone. With the mobile app all they have to
-                        do is click on the property that they are at, and then create an inspection. The inspection on the phone lets you click on the list of items that need to be checked and if any of them need to be fixed you can just take a picture
-                        with your phone and include it into the inspection. In the app you can add vendors to the property that work with the property. The property manager can send the email to the vendor immediately as they finish creating the inspection
-                        on the app. All of this can be done by the property manager's phone.
-
-                    </p>
+                    <p style="text-indent:25px">Built Alexa Skill for API project for my CSE445: Distributed Software Development class. This skill is not a published Alexa Skill. 
+                        The skill works after the user opens the skill and Alexa asks the user 'Welcome, to house pictures! What image would you like to see?'. 
+                        The user then says the house number that they want to see and then the image is displayed in the entire screen for the user to see.
+                    </p><br/>
                 </ul>
             </p>
 
             <br/>
-
+            <p class="section-sectionName" style="text-align:left;">Dialog</p>
+                    <p>Example: </p>
+                    <p>User: "<i>Alexa, open House Pictures.</i>"</p>
+                    <p>Alexa: "<i>Welcome, to house pictures! What image would you like to see?</i>"</p>
+                    <p>User: "<i>Show me house number 3.</i>"</p>
+                    <p><b>Displays House #3</b></p>
+                    <p>User: "<i>Show all houses.</i>"</p>
+                    <p><b>Displays All House</b></p>
+                    <br/>
             <p class="section-sectionName" style="text-align:left;">Technology</p>
             <ul style="list-style:circle;">
                 <li>Frontend</li>
@@ -66,25 +65,84 @@
                 </ul>
                 <li>Backend</li>
                 <ul>
-                    <li>Java</li>
-                    <li>Spring Boot</li>
-                    <li>mySQL</li>
+                    <li>JSON</li>
+                    <li>Alexa Skill</li>
+                    <li>Amazon DynamoDB</li>
                 </ul>
             </ul>
             </p>
+            <br/>
+            <!-- You tube reference: https://youtu.be/QMQwOd1I0nw-->
+            <p class="section-sectionName" style="text-align:left;">Demo: Alexa Skill</p>
+            
+            <iframe width="500" height="400" src="https://www.youtube.com/embed/QMQwOd1I0nw" frameborder="0" allowfullscreen>
+            </iframe>
+            <br/>
+            <p class="section-sectionName" style="text-align:left;">Display Images Grid</p>
+    <div id = "image_container">
+      <div id = "grid_view">
+        <div class = "image_in_grid" onclick="showFullImage(1)">
+          <img src = "../../img/01.jpg" />
+        </div>
+        <div class = "image_in_grid" onclick="showFullImage(2)">
+          <img src = "../../img/02.jpg" />
+        </div>
+        <div class = "image_in_grid" onclick="showFullImage(3)">
+          <img src = "../../img/03.jpg" />
+        </div>
+        <br/>
+        <div class = "image_in_grid" onclick="showFullImage(4)">
+          <img src = "../../img/04.jpg" />
+        </div>
+      </div>
+    </div>
+    <script>
+    function showFullImage(image) {
+      var image_path = ("../../img/0" + image + ".jpg");
+      document.getElementById('image_container').innerHTML = "<img src = '" + image_path + "' />";
+      console.log(image_path);
+    }
+    function showGridView() {
+      var content_string = "<div id = 'grid_view'>\
+      <div class = 'image_in_grid' onclick='showFullImage(1)'>\
+      <img src = '../../img/01.jpg' />\
+      </div>\
+      <div class = 'image_in_grid' onclick='showFullImage(2)'>\
+      <img src = '../../img/02.jpg' />\
+      </div>\
+      <div class = 'image_in_grid' onclick='showFullImage(3)'>\
+      <img src = '../../img/03.jpg' />\
+      </div>\
+      <div class = 'image_in_grid' onclick='showFullImage(4)'>\
+      <img src = '../../img/04.jpg' />\
+      </div>\
+      </div>";
+      document.getElementById('image_container').innerHTML = content_string;
+    }
+    function refresh() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "https://aqw72pp2pi.execute-api.us-east-1.amazonaws.com/prod", true);
+      xhttp.send();
+      xhttp.addEventListener("readystatechange", processRequest, false);
 
-            <br/>
-            <p class="section-sectionName" style="text-align:left;">Web Application</p>
-            <p>Property Manager Profile.</p>
-            <a class="img"><img src="../../img/feathir-account.png" height="150"></a>
-            <p>Adding a new property to the list of properties that are already being managed.</p>
-            <a class="img"><img src="../../img/feather-new-unit.png" height="250"></a>
-            <p>Adding a new tenant to the property.</p>
-            <a class="img"><img src="../../img/feathir-new-tenant.png" height="250"></a>
-            <br/>
-            <p class="section-sectionName" style="text-align:left;">Android Application</p>
-            <p>Adroid app walk through of how to view inspections done on one of the properties.</p>
-            <a class="img"><img src="../../img/feathir-android.png" height="360"></a>
+      function processRequest(e) {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          var response = JSON.parse(xhttp.responseText);
+          var numberString = response.dogPicture;
+
+          if(numberString < 5 && numberString > 0) {
+            showFullImage(numberString);
+          } else {
+            showGridView();
+          }
+          console.log(numberString);
+        }
+      }
+      setTimeout(refresh, 1000);
+    }
+    refresh();
+    </script>
+            
             <br/>
             <br/>
 
